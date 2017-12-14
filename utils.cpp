@@ -8,11 +8,11 @@
 
 namespace
 {
-constexpr std::string baseFilePathStr("./data");
+const std::string baseFilePathStr = "./data";
 }
 
 
-int utils_main(std::string const & const filename)
+int utils_main(std::string const & filename)
 {
    // open files, parse into the data
    // find total number of entities
@@ -34,4 +34,3 @@ int utils_main(std::string const & const filename)
 }
 
 
-bool read_data

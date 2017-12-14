@@ -4,21 +4,33 @@
  *          with the appropriate command line select to run the portion requested.
  */
 
-#include <string>
-#include <getopt.h>
 #include <cstdlib>
+#include <getopt.h>
+#include <iostream>
+
+
+namespace
+{
+const std::string programName = "life-expectancy";
+}
 
 
 void printUsageAndExit()
 {
-   // print usage and exit
+   const std::string usageStr =
+      "usage: " + programName + "[options] [-a|--app] application [-f|--file] filename\n" +
+      "-a, --app application  : Determines which of the applications to run\n" +
+      "-f, --file filename    : Gives the filename of the data textfile\n" +
+      "-h, --help             : Prints this usage message and exits\n";
+
+   std::cout << usageStr << std::endl;
+
+   exit(0);
 }
 
 
 int main(int argc, char ** argv)
 {
-   int nextOption = 0;
-   std::string programName(argv[0]);
 
    constexpr char * const short_options = "hf:a:";
    constexpr struct option long_options[] = {
@@ -28,6 +40,7 @@ int main(int argc, char ** argv)
       { nullptr,    0, nullptr, 0   }
    };
 
+   int nextOption = 0;
    std::string filename;
    std::string application;
 

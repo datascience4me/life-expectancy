@@ -42,37 +42,37 @@ struct LIFE_EXPECTANCY_DATA
  * expectancy. If the function returns true, the function parsed normal data.
  * If the function returns false, the function parsed metadata from the file.
  */
-bool read_data(std::string & const filename,
-               LIFE_EXPECTANCY_DATA & const data,
-               LIFE_EXPECTANCY_METADATA & const metadata);
+bool read_data(std::string const & filename,
+               LIFE_EXPECTANCY_DATA & data,
+               LIFE_EXPECTANCY_METADATA & metadata);
 
 /*
  * Takes a vector of life expectancy data and filters out the members not in
  * the given region.
  */
-bool filter_region(std::vector<LIFE_EXPECTANCY_DATA> & const data,
-                   std::string const & const region);
+bool filter_region(std::vector<LIFE_EXPECTANCY_DATA> & data,
+                   std::string const & region);
 
 /*
  * Takes a vector of life expectancy metadata and filters out the members not
  * in the given region.
  */
-bool filter_region(std::vector<LIFE_EXPECTANCY_METADATA> & const metadata,
-                   std::string const & const region);
+bool filter_region(std::vector<LIFE_EXPECTANCY_METADATA> & metadata,
+                   std::string const & region);
 
 /*
  * Takes a vector of life expectancy data and filters out members not in the income class.
  */
-bool filter_income(std::vector<LIFE_EXPECTANCY_DATA> & const data, INCOME_CLASS income);
+bool filter_income(std::vector<LIFE_EXPECTANCY_DATA> & data, INCOME_CLASS income);
 
 /*
  * Takes a vector of life expectancy metadata and filters out members not in the income class.
  */
-bool filter_income(std::vector<LIFE_EXPECTANCY_METADATA> & const metadata, INCOME_CLASS income);
+bool filter_income(std::vector<LIFE_EXPECTANCY_METADATA> & metadata, INCOME_CLASS income);
 
 /*
  * Executes the utility main application on the filename.
  */
-int utils_main(std::string const & const filename);
+int utils_main(std::string const & filename);
 
 #endif   // LIFE_EXPECT_UTILS_H
