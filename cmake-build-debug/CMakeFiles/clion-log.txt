@@ -1,0 +1,4 @@
+/home/ssnover/develop/tools/clion/clion-2017.2.1/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/ssnover/develop/life-expectancy-cpp
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/ssnover/develop/life-expectancy-cpp/cmake-build-debug

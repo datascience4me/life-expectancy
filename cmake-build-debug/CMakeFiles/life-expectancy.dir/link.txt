@@ -1,0 +1,1 @@
+/usr/bin/c++  -g  -rdynamic CMakeFiles/life-expectancy.dir/main.cpp.o CMakeFiles/life-expectancy.dir/utils.cpp.o  -o life-expectancy 
