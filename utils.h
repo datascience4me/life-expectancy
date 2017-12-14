@@ -26,6 +26,11 @@ struct LIFE_EXPECTANCY_METADATA
    std::string const countryCode;
    std::string const region;
    INCOME_CLASS const incomeClass;
+
+   LIFE_EXPECTANCY_METADATA(std::string code, std::string region, INCOME_CLASS inClass)
+      : countryCode(std::move(code)),
+        region(std::move(region)),
+        incomeClass(inClass) {}
 };
 
 
@@ -34,6 +39,11 @@ struct LIFE_EXPECTANCY_DATA
    std::string const countryName;
    std::string const countryCode;
    std::map<int, double> annualData;
+
+   LIFE_EXPECTANCY_DATA(std::string name, std::string code, std::map<int, double> datum)
+      : countryName(std::move(name)),
+        countryCode(std::move(code)),
+        annualData(std::move(datum)) {}
 };
 
 
@@ -43,8 +53,8 @@ struct LIFE_EXPECTANCY_DATA
  * If the function returns false, the function parsed metadata from the file.
  */
 bool read_data(std::string const & filename,
-               LIFE_EXPECTANCY_DATA & data,
-               LIFE_EXPECTANCY_METADATA & metadata);
+               std::vector<LIFE_EXPECTANCY_DATA> & data,
+               std::vector<LIFE_EXPECTANCY_METADATA> & metadata);
 
 /*
  * Takes a vector of life expectancy data and filters out the members not in

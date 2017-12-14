@@ -7,6 +7,7 @@
 #include <cstdlib>
 #include <getopt.h>
 #include <iostream>
+#include "utils.h"
 
 
 namespace
@@ -31,9 +32,8 @@ void printUsageAndExit()
 
 int main(int argc, char ** argv)
 {
-
-   constexpr char * const short_options = "hf:a:";
-   constexpr struct option long_options[] = {
+   const char * const short_options = "hf:a:";
+   const struct option long_options[] = {
       { "help",     0, nullptr, 'h' },
       { "file",     1, nullptr, 'f' },
       { "app",      1, nullptr, 'a' },
@@ -69,6 +69,10 @@ int main(int argc, char ** argv)
    }
    while (-1 != nextOption);
 
+   if ("util" == application)
+   {
+      utils_main(filename);
+   }
 
    return 0;
 }
